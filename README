@@ -1,0 +1,36 @@
+# Prompt Engineering Basics
+
+This is a repository meant to guide you through the initial process of setting up an Azure Open AI prompting exercise.
+
+We will set up the AOAI keys, and use them in the IPython Notebook.
+
+## Steps
+
+### Portal
+
+1. Create a resource group in Azure US West 2 and an Azure OpenAI resource type
+2. Get the keys and endpoints for this resource
+
+3. In the Azure OpenAI Studio, we need to deploy a model to use with the notebook:
+    1. Deploy a "base model", not a fine-tuned model
+    2. I would suggest deploying `gpt-3.5-turbo`: It is more demonstrative of some of the errors we want to exploit
+    3. If you use `gpt-4o-mini`, your answers may deviate.  
+    4. Call your deployment `gpt-3.5-turbo`
+
+4. Run the following commands to set your environment variables.
+
+Powershell:
+
+```powershell
+[System.Environment]::SetEnvironmentVariable('AZURE_OPENAI_API_KEY', 'REPLACE_WITH_YOUR_KEY_VALUE_HERE', 'User')
+[System.Environment]::SetEnvironmentVariable('AZURE_OPENAI_ENDPOINT', 'REPLACE_WITH_YOUR_ENDPOINT_HERE', 'User')
+[System.Environment]::SetEnvironmentVariable('AZURE_OPENAI_DEPLOYMENT', 'gpt-3.5-turbo', 'User')
+```
+
+Bash:
+
+```bash
+export AZURE_OPENAI_API_KEY="REPLACE_WITH_YOUR_KEY_VALUE_HERE"
+export AZURE_OPENAI_ENDPOINT="REPLACE_WITH_YOUR_ENDPOINT_HERE"
+export AZURE_OPENAI_DEPLOYMENT="gpt-3.5-turbo"
+```
